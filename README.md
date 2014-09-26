@@ -16,4 +16,4 @@ It can tell you the time and the date.
 Click "Free" to install and once it's finished, click the Polar Clock icon next the address bar and it opens!
 
 ###-- Credits --
-Thanks to jQuery, Bootstrap and D3.
+Thanks to jQuery, Bootstrap, D3 and Font Awesome.
