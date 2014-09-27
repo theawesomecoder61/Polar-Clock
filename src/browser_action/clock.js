@@ -1,5 +1,12 @@
 window.onload = function() {
 
+var isInIframe = (window.location != window.parent.location) ? true : false;
+if(isInIframe) {
+  $("#fullscreen").show();
+} else {
+  $("#fullscreen").hide();
+}
+
 $("#fullscreen").click(function() {
   window.open(location.href);
 });
@@ -58,20 +65,6 @@ function tick() {
       .each(function(d) { this._value = d.value; })
       .data(fields)
       .each(function(d) { d.previousValue = this._value; });
-
-/*
-- easing options -
-linear
-poly
-quad
-cubic
-sin
-exp
-circle
-elastic
-bounce
-cubic
-*/
 
 function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null

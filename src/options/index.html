@@ -9,6 +9,9 @@
 	<script src="options.js"></script>
 	<script src="../../picker/jscolor.js"></script>
 	<style>
+	body {
+		padding-bottom: 50px;
+	}
 	a {
 		color: #428bca;
 		text-decoration: none;
@@ -24,8 +27,11 @@
 		-webkit-user-drag: none;
 		-webkit-user-select: none;
 	}
-	label, small, h4 {
+	label, small, h4, .rating, p, iframe {
 		padding-left: 10px;
+	}
+	label {
+		font-weight: normal;
 	}
 	select {
 		outline: none !important;
@@ -39,13 +45,36 @@
 	#danger-zone, #danger-zone li {
 		border-color: #f2dede;
 	}
+	.rating {
+		color: #000000;
+		font-size: 16pt;
+		direction: rtl;
+		text-align: left;
+	}
+	.rating > span {
+		display: inline-block;
+		position: relative;
+		width: 1.1em;
+	}
+	.rating > span:hover,
+	.rating > span:hover ~ span {
+		color: transparent;
+	}
+	.rating > span:hover:before,
+	.rating > span:hover ~ span:before {
+		font-family: "FontAwesome";
+		content: "\f005";
+		position: absolute;
+		left: 0; 
+		color: gold;
+	}
 	</style>
 </head>
 <body>
 	<center>
 		<img src="../../icons/bg.png" width="200px">
 		<h2>Polar Clock</h2>
-		<h3>version 1.4</h3>
+		<h3>version <span class="version"></span></h3>
 		<h5>created by <a href="http://tac61.weebly.com">theawesomecoder61</a></h5>
 	</center>
 
@@ -53,11 +82,11 @@
 
 	<h4><i class="fa fa-cog"></i> Options</h4>
 	<label>Background color: <input id="color" class="color" value="ffffff"></label>
-	<p/><p/>
+	<p></p>
 	<label>
 		Clock easing:
 		<select id="easing">
-			<option>linear</option>
+			<option selected>linear</option>
 			<option>quad</option>
 			<option>cubic</option>
 			<option>sin</option>
@@ -68,13 +97,39 @@
 			<option>bounce</option>
 		</select>
 	</label>
-	<p/>
-	<small>The options save automatically.</small>
-	<p/>
+	<p></p>
+	<small><b>The options save automatically.</b></small>
+	<p></p>
 	<ul class="list-group" id="danger-zone">
 	  <li class="list-group-item list-group-item-danger"><i class="fa fa-exclamation-circle"></i> <b>Danger Zone!</b></li>
 	  <li class="list-group-item list-group-item-danger"><button class="btn btn-danger" id="reset">Erase Options</button></li>
 	</ul>
+
+	<hr/>
+
+	<h4><i class="fa fa-question"></i> What's new in <span class="version"></span>?</h4>
+		<ul>
+			<li>Sets some default options on first run</li>
+			<li>Threw in some background scripts</li>
+		</ul>
+
+	<hr/>
+
+	<h4><i class="fa fa-star"></i> Rate or Star/Fork on GitHub</h4>
+	<p>I would greatly appreciate the support!</p>
+	<a href="http://bit.ly/rate-polar-clock">
+		<div class="rating">
+			<span><i class="fa fa-star-o"></i></span>
+			<span><i class="fa fa-star-o"></i></span>
+			<span><i class="fa fa-star-o"></i></span>
+			<span><i class="fa fa-star-o"></i></span>
+			<span><i class="fa fa-star-o"></i></span>
+		</div>
+		<p></p>
+		<iframe src="http://ghbtns.com/github-btn.html?user=theawesomecoder61&repo=Polar-Clock&type=watch&count=true" frameborder="0" scrolling="0" style="width:118px; height: 20px;" allowTransparency="true"></iframe>
+		<br/>
+		<iframe src="http://ghbtns.com/github-btn.html?user=theawesomecoder61&repo=Polar-Clock&type=fork&count=true" frameborder="0" scrolling="0" style="width:118px; height: 20px;" allowTransparency="true"></iframe>
+	</a>
 
 	<hr/>
 
@@ -83,6 +138,7 @@
 		<li><a href="http://jquery.com">jQuery</a></li>
 		<li><a href="http://getbootstrap.com">Bootstrap</a></li>
 		<li><a href="http://d3js.org">d3</a></li>
+		<li><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a></li>
 	</ul>
 </body>
 </html>
