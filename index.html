@@ -20,13 +20,14 @@
         }
       }
       function installExt() {
-        chrome.webstore.install();
-        setTimeout(function() {
-          var ask = confirm("Thanks! Care to drop a rating?");
-          if(ask) {
-            window.open("http://bit.ly/rate-polar-clock", "_self");
-          }
-        }, 3500);
+        chrome.webstore.install("https://chrome.google.com/webstore/detail/amnkkcdglhdjnfjmhmahdhimhogldmlo",
+        success(), failure());
+      }
+      function success() {
+        console.log("Installed! :)")
+      }
+      function fail() {
+        console.log("Rejected :(")
       }
     </script>
   </head>
