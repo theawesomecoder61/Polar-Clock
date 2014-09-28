@@ -13,12 +13,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>Polar Clock</title>
     <script>
-      window.onload=function() {
-        var is_chrome = window.chrome;
-        if(!is_chrome) {
-          alert("Hey, you're not in Chrome! Either open it or install it cuz this Polar Clock is only for Chrome.");
-        }
-      }
       function installExt() {
         chrome.webstore.install("https://chrome.google.com/webstore/detail/amnkkcdglhdjnfjmhmahdhimhogldmlo", success, fail);
       }
@@ -26,7 +20,7 @@
         console.log("Installed! :)");
       }
       function fail() {
-        console.log("Rejected installation :(");
+        console.log("Rejected the installation :(");
       }
     </script>
   </head>
