@@ -21,7 +21,7 @@
       }
       function installExt() {
         chrome.webstore.install("https://chrome.google.com/webstore/detail/amnkkcdglhdjnfjmhmahdhimhogldmlo",
-        success(), failure());
+        success, fail());
       }
       function success() {
         console.log("Installed! :)")
