@@ -16,17 +16,17 @@
       window.onload=function() {
         var is_chrome = window.chrome;
         if(!is_chrome) {
-          alert("Hey, you're not in Chrome! Either open it or install it.");
+          alert("Hey, you're not in Chrome! Either open it or install it cuz this Polar Clock is only for Chrome.");
         }
       }
       function installExt() {
         chrome.webstore.install("https://chrome.google.com/webstore/detail/amnkkcdglhdjnfjmhmahdhimhogldmlo", success, fail);
       }
       function success() {
-        console.log("Installed! :)")
+        console.log("Installed! :)");
       }
       function fail() {
-        console.log("Rejected :(")
+        console.log("Rejected installation :(");
       }
     </script>
   </head>
