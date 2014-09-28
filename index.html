@@ -14,25 +14,9 @@
     <![endif]-->
     <title>Polar Clock by theawesomecoder61</title>
     <script>
-    function Ext_Detect_NotInstalled(ExtName,ExtID) {
-      console.log(ExtName + ' Not Installed');
+    function installExt() {
+      chrome.management.get("amnkkcdglhdjnfjmhmahdhimhogldmlo", function(a){console.log(a);});
     }
-
-    function Ext_Detect_Installed(ExtName,ExtID) {
-      console.log(ExtName + ' Installed');
-    }
-
-    function Ext_Detect(ExtName,ExtID) {
-      var s = document.createElement('script');
-      s.onload = function(){Ext_Detect_Installed(ExtName,ExtID);};
-      s.onerror = function(){Ext_Detect_NotInstalled(ExtName,ExtID);};
-      s.src = 'chrome-extension://' + ExtID + '/manifest.json';
-      document.body.appendChild(s);
-    }
-
-    window.onload = function() {
-      Ext_Detect('LocalLinks','amnkkcdglhdjnfjmhmahdhimhogldmlo');
-    };
         // chrome.webstore.install();
     </script>
   </head>
