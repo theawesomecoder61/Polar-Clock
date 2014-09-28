@@ -13,20 +13,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>Polar Clock</title>
     <script>
-      $(document).ready(function() {
-        $("a[href*=#]:not([href=#])").click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $("html, body").animate({
-                scrollTop: target.offset().top
-              }, 1000);
-              return false;
-            }
-          }
-        });
-      });
       function installExt() {
         chrome.webstore.install("https://chrome.google.com/webstore/detail/amnkkcdglhdjnfjmhmahdhimhogldmlo", success, fail);
       }
@@ -47,9 +33,6 @@
           <h1><img src="http://i.imgur.com/RR2rvoL.png" height="38"> Polar Clock</h1>
           <h2>A really awesome clock. For Chrome.</h2>
         </header>
-        
-        
-        <a href="#gallery" class="button"><span>Gallery</span></a>
 
         <section id="downloads" class="clearfix">
           <a href="#" onclick="installExt()" id="polar-clock" class="button"><span>Install!</span></a>
@@ -78,11 +61,13 @@
 
         <hr>
 
-        <center id="gallery">
-          <h3>-- Gallery --</h3>
-          <img src="https://lh3.googleusercontent.com/s8fTpvXpc8bdRI4bP7RQlHPfiYJy0xiAIUnxEp4E-Md7AM7_iVQy_VtWpQ9iZpWPetNjKHk7=s640-h400-e365-rw">
-          <br/><iframe width="640" height="400" src="//www.youtube.com/embed/hiM43dUeeo0?theme=light" frameborder="0" allowfullscreen></iframe>
-        </center>
+        <section id="gallery">
+          <center>
+            <h3>-- Gallery --</h3>
+            <img src="https://lh3.googleusercontent.com/s8fTpvXpc8bdRI4bP7RQlHPfiYJy0xiAIUnxEp4E-Md7AM7_iVQy_VtWpQ9iZpWPetNjKHk7=s640-h400-e365-rw">
+            <br/><iframe width="640" height="400" src="//www.youtube.com/embed/hiM43dUeeo0?theme=light" frameborder="0" allowfullscreen></iframe>
+          </center>
+        </section>
         
         <footer>
           &copy; 2014 <a href="https://github.com/theawesomecoder61">theawesomecoder61</a><br>
