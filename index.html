@@ -22,6 +22,9 @@
       function fail() {
         console.log("Rejected the installation :(");
       }
+      if(chrome.app.isInstalled) {
+        console.log("Installed! :)");
+      }
     </script>
   </head>
 
