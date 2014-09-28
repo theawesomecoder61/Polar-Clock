@@ -13,6 +13,15 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <title>Polar Clock by theawesomecoder61</title>
+    <script>
+      function installExt() {
+        if(chrome.app.isInstalled) {
+          alert("You already have it!");
+        } else {
+          chrome.webstore.install();
+        }
+      }
+    </script>
   </head>
 
   <body>
@@ -25,7 +34,7 @@
         </header>
 
         <section id="downloads" class="clearfix">
-          <a href="#" onclick="chrome.webstore.install()" id="download-zip" class="button"><span>Download</span></a>
+          <a href="#" onclick="installExt()" id="download-zip" class="button"><span>Download</span></a>
           <a href="https://github.com/theawesomecoder61/Polar-Clock" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
