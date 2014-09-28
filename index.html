@@ -19,11 +19,9 @@
       }
     </style>
     <script>
-      function onLoad {
-        window.onscroll = function() {
-            var speed = 8.0;
-            document.getElementById("container").style.backgroundPosition = (-window.pageXOffset / speed) + "px " + (-window.pageYOffset / speed) + "px";
-        }
+      window.onscroll = function() {
+          var speed = 8.0;
+          document.getElementById("container").style.backgroundPosition = (-window.pageXOffset / speed) + "px " + (-window.pageYOffset / speed) + "px";
       }
       function installExt() {
         chrome.webstore.install("https://chrome.google.com/webstore/detail/amnkkcdglhdjnfjmhmahdhimhogldmlo", success, fail);
@@ -37,7 +35,7 @@
     </script>
   </head>
 
-  <body onload="onLoad()">
+  <body>
     <div id="container">
       <div class="inner">
 
