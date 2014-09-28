@@ -14,11 +14,33 @@
     <![endif]-->
     <title>Polar Clock by theawesomecoder61</title>
     <script>
-      function installExt() {
-        var myPort=chrome.extension.connect('amnkkcdglhdjnfjmhmahdhimhogldmlo', some_object_to_send_on_connect);
-        console.log(myPort);
-        chrome.webstore.install();
-      }
+    function Ext_Detect_NotInstalled(ExtName,ExtID) {
+   console.log(ExtName + ' Not Installed');
+   if (divAnnounce.innerHTML  != '')
+   divAnnounce.innerHTML = divAnnounce.innerHTML + "<BR>"
+
+   divAnnounce.innerHTML = divAnnounce.innerHTML + 'Page needs ' + ExtName + ' Extension -- to intall the LocalLinks extension click <a href="https://chrome.google.com/webstore/detail/locallinks/' + ExtID +'">here</a>';
+  }
+
+  function Ext_Detect_Installed(ExtName,ExtID) {
+    console.log(ExtName + ' Installed');
+  }
+
+  var Ext_Detect = function(ExtName,ExtID) {
+    var s = document.createElement('script');
+    s.onload = function(){Ext_Detect_Installed(ExtName,ExtID);};
+    s.onerror = function(){Ext_Detect_NotInstalled(ExtName,ExtID);};
+    s.src = 'chrome-extension://' + ExtID + '/manifest.json';
+    document.body.appendChild(s);
+  }
+
+ var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+
+ if (is_chrome==true)
+ {
+  window.onload = function() { Ext_Detect('LocalLinks','amnkkcdglhdjnfjmhmahdhimhogldmlo');};
+ }
+        // chrome.webstore.install();
     </script>
   </head>
 
