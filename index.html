@@ -18,16 +18,9 @@
       }
       function success() {
         console.log("Installed! :)");
-        document.getElementById('polar-clock').style.display = 'none';
       }
       function fail() {
         console.log("Rejected the installation :(");
-      }
-      window.onload=function() {
-      if(chrome.app.isInstalled) {
-        document.getElementById('polar-clock').style.display = 'none';
-        console.log("y")
-      }
       }
     </script>
   </head>
