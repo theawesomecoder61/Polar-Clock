@@ -12,7 +12,19 @@
     <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/amnkkcdglhdjnfjmhmahdhimhogldmlo">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>Polar Clock</title>
+    <style>
+      #container {
+        background-repeat:repeat-xy;
+        background-attachment: fixed;
+      }
+    </style>
     <script>
+      function onLoad {
+        window.onscroll = function() {
+            var speed = 8.0;
+            document.getElementtById("container").style.backgroundPosition = (-window.pageXOffset / speed) + "px " + (-window.pageYOffset / speed) + "px";
+        }
+      }
       function installExt() {
         chrome.webstore.install("https://chrome.google.com/webstore/detail/amnkkcdglhdjnfjmhmahdhimhogldmlo", success, fail);
       }
@@ -25,7 +37,7 @@
     </script>
   </head>
 
-  <body>
+  <body onload="onLoad()">
     <div id="container">
       <div class="inner">
 
