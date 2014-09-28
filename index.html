@@ -20,7 +20,7 @@
         }
       }
       function installExt() {
-        chrome.webstore.install("https://chrome.google.com/webstore/detail/amnkkcdglhdjnfjmhmahdhimhogldmlo", success(), fail());
+        chrome.webstore.install("https://chrome.google.com/webstore/detail/amnkkcdglhdjnfjmhmahdhimhogldmlo", success, fail);
       }
       function success() {
         console.log("Installed! :)")
