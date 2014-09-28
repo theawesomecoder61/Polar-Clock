@@ -16,18 +16,14 @@
     <![endif]-->
     <title>Polar Clock by theawesomecoder61</title>
     <script>
-      function openInTab(url) {
-        var win = window.open(url, "_blank");
-        win.focus();
-      }
       function installExt() {
         chrome.webstore.install();
         setTimeout(function() {
           var ask = confirm("Thanks! Care to drop a rating?");
           if(ask) {
-            openInTab("http://bit.ly/rate-polar-clock");
+            window.open("http://bit.ly/rate-polar-clock", "_self");
           }
-        }, 2500);
+        }, 3500);
       }
     </script>
   </head>
