@@ -16,6 +16,12 @@
     <![endif]-->
     <title>Polar Clock by theawesomecoder61</title>
     <script>
+      window.onload=function() {
+        var is_chrome = window.chrome;
+        if(!is_chrome) {
+          alert("Hey, you're not in Chrome! Either open it or install it.");
+        }
+      }
       function installExt() {
         chrome.webstore.install();
         setTimeout(function() {
