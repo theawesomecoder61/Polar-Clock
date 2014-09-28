@@ -130,6 +130,10 @@ a.button {
   -webkit-box-shadow: 10px 10px 5px #888;
   -moz-box-shadow: 10px 10px 5px #888;
   box-shadow: 0px 1px 5px #e8e8e8;
+  -moz-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
 a.button:hover {
   border-top: solid 1px #b7b7b7;
@@ -152,6 +156,9 @@ a.button span {
   height: 23px;
 }
 
+#polar-clock span {
+  background: transparent url(http://i.imgur.com/jDmJJDj.png) 12px 50% no-repeat;
+}
 #chrome span {
   background: transparent url(../images/chrome.png) 12px 50% no-repeat;
 }
