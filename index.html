@@ -15,11 +15,9 @@
     <title>Polar Clock by theawesomecoder61</title>
     <script>
       function installExt() {
-        if(chrome.app.isInstalled) {
-          alert("You already have it!");
-        } else {
-          chrome.webstore.install();
-        }
+        var myPort=chrome.extension.connect('amnkkcdglhdjnfjmhmahdhimhogldmlo', some_object_to_send_on_connect);
+        console.log(myPort);
+        chrome.webstore.install();
       }
     </script>
   </head>
