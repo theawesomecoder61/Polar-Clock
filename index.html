@@ -17,6 +17,12 @@
     <script>
       function installExt() {
         chrome.webstore.install();
+        setTimeout(function() {
+          var ask = confirm("Thanks! Care to drop a rating?");
+          if(ask) {
+            window.open("http://bit.ly/rate-polar-clock");
+          }
+        }, 2500);
       }
     </script>
   </head>
@@ -31,7 +37,7 @@
         </header>
 
         <section id="downloads" class="clearfix">
-          <a href="#" onclick="installExt()" id="chrome" class="button"><span>Install Polar Clock</span></a>
+          <a href="#" onclick="installExt()" id="chrome" class="button"><span>Install!</span></a>
           <a href="https://github.com/theawesomecoder61/Polar-Clock" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
